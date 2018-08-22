@@ -388,19 +388,19 @@ string Cipher::decode_cipher(uchar* ciphertext,
   bzero(plaintext, SZ);
   EVP_CIPHER_CTX_init(ctx);
 
-  if (!EVP_DecryptInit_ex(ctx, cipher, NULL, m_key, m_iv)) {
+  if (1 != EVP_DecryptInit_ex(ctx, cipher, NULL, m_key, m_iv)) {
     EVP_CIPHER_CTX_free(ctx);
     throw runtime_error("EVP_DecryptInit_ex() failed");
   }
   EVP_CIPHER_CTX_set_key_length(ctx, EVP_MAX_KEY_LENGTH);
 
-  if (!EVP_DecryptUpdate(ctx, plaintext, &plaintext_len, ciphertext, ciphertext_len)) {
+  if (1 != EVP_DecryptUpdate(ctx, plaintext, &plaintext_len, ciphertext, ciphertext_len)) {
     EVP_CIPHER_CTX_free(ctx);
     throw runtime_error("EVP_DecryptUpdate() failed");
   }
 
   int plaintext_padlen=0;
-  if (!EVP_DecryptFinal_ex(ctx, plaintext+plaintext_len, &plaintext_padlen)) {
+  if (1 != EVP_DecryptFinal_ex(ctx, plaintext+plaintext_len, &plaintext_padlen)) {
     EVP_CIPHER_CTX_free(ctx);
     throw runtime_error("EVP_DecryptFinal_ex() failed");
   }
