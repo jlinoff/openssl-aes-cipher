@@ -106,6 +106,7 @@ Type `./ct.exe -h` to get more information about how to use the tool.
 
 ## Using it in your code
 The following example shows how to use the class encrypt/decrypt a file in your code.
+For simple symmetric encryption/decryption it is much easier to use than the standard interface.
 
 ```c++
 #include "cipher.h"
@@ -116,7 +117,7 @@ int main() {
   cipher.encrypt_file("plaintext", "encrypted", "password", "saltsalt");
    
   // decrypt a file.
-  cipher.decrypt_file("encrypted", "decrypted", "passwod", "saltsalt");
+  cipher.decrypt_file("encrypted", "decrypted", "password", "saltsalt");
   
   return 0;
 }
@@ -137,7 +138,7 @@ int main() {
   cipher.encrypt_file("plaintext", "encrypted", "password", "saltsalt");
    
   // decrypt a file.
-  cipher.decrypt_file("encrypted", "decrypted", "passwod", "saltsalt");
+  cipher.decrypt_file("encrypted", "decrypted", "password", "saltsalt");
 
   return 0;
 }
