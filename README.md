@@ -1,4 +1,7 @@
-# openssl-aes-cipher
+openssl-aes-cipher
+==================
+[![Releases](https://img.shields.io/github/release/jlinoff/openssl-aes-cipher.svg?style=flat)](https://github.com/jlinoff/openssl-aes-cipher/releases)
+
 C++ class that interfaces to OpenSSL AES ciphers and is interoperable
 with openssl.
 
