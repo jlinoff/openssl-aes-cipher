@@ -11,7 +11,7 @@ to create a C++ class that interfaces (wraps) the OpenSSL library and allows one
 decrypt files or strings.
 
 It is interoperable with the `openssl` command line
-tool which makes it a good introduction to using OpenSSL for ciphers. I think of it as the C++
+tool which makes it a good introduction to using OpenSSL for symmetric ciphers. I think of it as the C++
 version of the python [lock_files](https://github.com/jlinoff/lock_files) tool that i released
 a few years ago.
 
